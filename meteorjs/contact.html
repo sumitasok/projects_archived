@@ -1,0 +1,49 @@
+<head>
+  <title>contact</title>
+</head>
+
+<body>
+  {{> header }}
+
+  {{> add_contact }}
+  {{> contacts_list }}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>
+
+<template name="header">
+  <div class="row-fluid">
+    <div class="well">
+      <h1>Contacts!</h1>
+    </div>
+  </div>
+</template>
+
+
+<template name="contacts_list">
+  <ul>
+    {{#each contacts}}
+      {{> contact_item }}
+    {{/each}}
+  </ul>
+</template>
+
+
+<template name="add_contact">
+  <form>
+    <input type="text" class="fullname" />
+    <input type="submit" class="btn btn-primary" />
+  </form>
+</template>
+
+<template name="contact_item">
+  <li>
+    {{ name }}
+    <button class="btn btn-danger delete"> x </button>
+  </li>
+</template>
+
